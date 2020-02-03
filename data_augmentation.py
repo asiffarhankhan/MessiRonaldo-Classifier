@@ -1,7 +1,7 @@
 from keras.preprocessing.image import ImageDataGenerator, img_to_array, array_to_img, load_img
 
-messi_images = 200
-ronaldo_images = 200
+messi_images = 200 #Nnumber of messi images in the dataset, chnage accordingly
+ronaldo_images = 200 #Nnumber of roanldo images in the dataset, chnage accordingly
 path = 'dataset/train'
 
 datagen = ImageDataGenerator(
