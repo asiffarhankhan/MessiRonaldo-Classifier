@@ -1,18 +1,13 @@
-import tensorflow as tf
-from keras.preprocessing.image import ImageDataGenerator
+import numpy as np
+from keras.preprocessing import image
+import tensorflow as tf 
 
-batch_size = 16
-path = 'dataset/test'
-imgen = ImageDataGenerator(rescale=1/255.)
-testGene = imgen.flow_from_directory(directory=path,
-                                        target_size=(150, 150,),
-                                        shuffle=False,
-                                        class_mode='binary',
-                                        batch_size=batch_size,
-                                        save_to_dir=None
-                                        )
+category = ['Messi', 'Ronaldo']
+model = tf.keras.models.load_model('classifier.h5')
+img_width, img_height = 150, 150
+img = image.load_img('dataset/test/sample/test11.jpeg', target_size = (img_width, img_height))
+img = image.img_to_array(img)
+img = np.expand_dims(img, axis = 0)
 
-model = tf.keras.models.load_model("classifier.h5")
-pred = model.predict_generator(testGene, steps=testGene.n/batch_size)
-
-print(pred)
+prediction = model.predict(img)
+print(category[int(prediction)])

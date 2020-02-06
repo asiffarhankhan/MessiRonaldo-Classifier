@@ -8,7 +8,7 @@ img_hieght, img_width = 150,150
 train_data_dir = 'dataset/train'
 #validation_data_dir = 'dataset/validation'
 
-nb_train_samples = 3000
+nb_train_samples = 7269
 #nb_validation_samples = 500
 
 epochs = 10
@@ -27,6 +27,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Conv2D(32,(3,3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
+
 
 model.add(Conv2D(64,(3,3)))
 model.add(Activation('relu'))
