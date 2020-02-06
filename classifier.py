@@ -54,6 +54,7 @@ train_generator = train_datagen.flow_from_directory(
 	class_mode = 'binary')
 
 model.fit_generator(train_generator,
+	verbose = True,
 	steps_per_epoch = nb_train_samples//batch_size,
 	epochs = epochs)
 

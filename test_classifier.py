@@ -15,5 +15,4 @@ testGene = imgen.flow_from_directory(directory=path,
 model = tf.keras.models.load_model("classifier.h5")
 pred = model.predict_generator(testGene, steps=testGene.n/batch_size)
 
-print(imgen)
-print(path)
+print(pred)
