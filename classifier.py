@@ -11,7 +11,7 @@ train_data_dir = 'dataset/train'
 nb_train_samples = 3000
 #nb_validation_samples = 500
 
-epochs = 50
+epochs = 10
 batch_size = 16
 
 if K.image_data_format() == 'channels_first':
@@ -57,4 +57,4 @@ model.fit_generator(train_generator,
 	steps_per_epoch = nb_train_samples//batch_size,
 	epochs = epochs)
 
-model.save_weights('classifier.h5')
+model.save('classifier.h5')
